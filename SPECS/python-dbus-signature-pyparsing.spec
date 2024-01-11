@@ -1,11 +1,11 @@
 %global srcname dbus-signature-pyparsing
 
 Name:           python-%{srcname}
-Version:        0.04
-Release:        5%{?dist}
+Version:        0.4.1
+Release:        1%{?dist}
 Summary:        Parser for a D-Bus Signature
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://github.com/stratis-storage/dbus-signature-pyparsing
 Source0:        %{url}/archive/v%{version}/%{srcname}-%{version}.tar.gz
 
@@ -21,6 +21,7 @@ Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{srcname}}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
+BuildRequires:  python3-pyparsing
 
 %description -n python3-%{srcname} %{_description}
 
@@ -42,6 +43,10 @@ Python 3 version.
 %{python3_sitelib}/dbus_signature_pyparsing-*.egg-info/
 
 %changelog
+* Tue May 09 2023 Bryan Gurney <bgurney@redhat.com> - 0.4.1-1
+- Update to 0.4.1
+- Resolves: rhbz#2196269
+
 * Tue Aug 10 2021 Mohan Boddu <mboddu@redhat.com> - 0.04-5
 - Rebuilt for IMA sigs, glibc 2.34, aarch64 flags
   Related: rhbz#1991688
